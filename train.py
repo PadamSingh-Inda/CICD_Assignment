@@ -23,5 +23,5 @@ accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 
 # Save the model
-with open("adaboost_model.pkl", 'wb') as f:
+with open("model.pkl", 'wb') as f:
     pickle.dump(adaboost_model, f)
