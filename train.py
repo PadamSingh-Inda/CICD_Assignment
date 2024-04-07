@@ -21,4 +21,4 @@ with open("model.pkl", 'wb') as f:
     pickle.dump(model, f)
 
     # Raise a custom exception
-    # raise CustomError("This is a manual error")
+    raise CustomError("This is a manual error")
