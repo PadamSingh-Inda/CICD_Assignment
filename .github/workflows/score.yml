@@ -54,7 +54,7 @@ jobs:
 
       - name: Evaluate model in docker container
         run: |
-          ModelScore=$(docker run --rm -d -p 8080:80 padamsingh2024/da-201o:both_fail --name both_fail)
+          ModelScore=$(docker run --rm -d -p 8080:80 --name both_failed_operations padamsingh2024/da-201o:both_fail)
           echo "Score:"
           echo "$ModelScore"
           if [[ `echo "$ModelScore 0.50" | awk '{print ($1 < $2)}'` == 1 ]]; then echo "Insufficient Accuracy" && exit 1; fi
