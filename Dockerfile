@@ -1,4 +1,4 @@
-# Use a specific Python base image
+# Use a Python 3.11 base image
 FROM python:3.11-slim
 
 # Define metadata
@@ -19,9 +19,5 @@ RUN python train.py
 # Expose port 80
 EXPOSE 80
 
-# Set environment variable
-ENV NAME=DA-201O-ASSIGMENT3
-
-
-# Run test.py when the container launches
+# Run test.py to perform model evaluations
 CMD ["python", "test.py"]
