@@ -33,7 +33,7 @@ jobs:
           context: .
           file: ./Dockerfile  # Path to Dockerfile
           push: true
-          tags: padamsingh2024/da-201o:latest  # image name
+          tags: padamsingh2024/da-201o:both_fail  # image name
 
   evaluate:
     runs-on: ubuntu-latest
