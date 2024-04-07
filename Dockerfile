@@ -20,7 +20,7 @@ RUN python train.py
 EXPOSE 80
 
 # Set environment variable
-ENV NAME=ASSIGNMENT3
+ENV NAME=DA-201O-ASSIGMENT3
 
 
 # Run test.py when the container launches
