@@ -33,7 +33,7 @@ jobs:
           context: .
           file: ./Dockerfile  # Path to Dockerfile
           push: true
-          tags: padamsingh2024/da-201o:both_fail  # image name
+          tags: padamsingh2024/da-201o:both_passed  # image name
 
   Test: # It is used to pull above docker image and evaluate model accuracy on test data
     runs-on: ubuntu-latest
@@ -50,11 +50,11 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Pull Docker image from above repository
-        run: docker pull padamsingh2024/da-201o:both_fail
+        run: docker pull padamsingh2024/da-201o:both_passed
 
       - name: Evaluate model in docker container
         run: |
-          ModelScore=$(docker run --rm -p 8080:80 --name both_failed_operations padamsingh2024/da-201o:both_fail)
+          ModelScore=$(docker run --rm -p 8080:80 --name both_passed_operations padamsingh2024/da-201o:both_passed)
           echo "Score:"
           echo "$ModelScore"
           if [[ `echo "$ModelScore 0.50" | awk '{print ($1 < $2)}'` == 1 ]]; then echo "Insufficient Accuracy" && exit 1; fi
