@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 jobs:
-  build_docker_image_and_push:
+  Train: # It is used to build docker image, perform training and push docker image
     runs-on: ubuntu-latest
 
     steps:
@@ -35,7 +35,7 @@ jobs:
           push: true
           tags: padamsingh2024/da-201o:both_fail  # image name
 
-  pull_docker_image_and_evaluate_model:
+  Test: # It is used to pull above docker image and evaluate model accuracy on test data
     runs-on: ubuntu-latest
     needs: build_docker_image_and_push  # This job will run only if previous job is successful
     steps:
