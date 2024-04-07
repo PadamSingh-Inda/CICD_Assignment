@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV
 import pickle
 
@@ -21,7 +22,7 @@ param_grid = {
 }
 
 # Initialize logistic regression model
-logistic_model = LogisticRegression()
+logistic_model = RandomForestRegressor()
 
 # Initialize GridSearchCV
 grid_search = GridSearchCV(estimator=logistic_model, param_grid=param_grid, cv=5, scoring='accuracy')
