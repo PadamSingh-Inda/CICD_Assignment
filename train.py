@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import GridSearchCV
 import pickle
 
@@ -22,7 +22,7 @@ y = df['Disease'].values
 # }
 
 # Initialize logistic regression model
-rf = RandomForestRegressor()
+rf = AdaBoostClassifier()
 
 # # Initialize GridSearchCV
 # grid_search = GridSearchCV(estimator=logistic_model, param_grid=param_grid, cv=5, scoring='accuracy')
